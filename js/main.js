@@ -1,6 +1,6 @@
 const main_btn = document.querySelector('.main_btn');
-const popup_inner = document.querySelector('.popup_inner');
 const popup = document.querySelector('.popup');
+const popup_inner = document.querySelector('.popup_inner');
 const popclose = document.querySelector('.popup_close');
 const zatem = document.querySelector('.zatem');
 const main = document.querySelector('.main');
@@ -9,27 +9,27 @@ const header_menu = document.querySelector('.header_menu');
 const menu_close = document.querySelector('.menu_close');
 
 main_btn.addEventListener('click', () => {
-    popup.classList.add('popup_open');
-    if (window.innerWidth < 600) {
+    popup_inner.classList.add('popup_inner_open');
+    if (window.innerWidth <423) {
         popclose.style.width = '40px';
     } else {
         popclose.style.width = '65px';
     }
-    popup_inner.classList.add('popup_inner_a');
+    popup.classList.add('popup_open');
     zatem.classList.add('zatem_open');
 })
 
 popclose.addEventListener('click', () => {
-    popup.classList.remove('popup_open');
+    popup_inner.classList.remove('popup_inner_open');
     popclose.style.width = '0px';
-    popup_inner.classList.remove('popup_inner_a');
+    popup.classList.remove('popup_open');
     zatem.classList.remove('zatem_open');
 })
 
 zatem.addEventListener('click', () => {
-    popup.classList.remove('popup_open');
+    popup_inner.classList.remove('popup_inner_open');
     popclose.style.width = '0px';
-    popup_inner.classList.remove('popup_inner_a');
+    popup.classList.remove('popup_open');
     zatem.classList.remove('zatem_open');
 })
 
