@@ -26,13 +26,6 @@ popclose.addEventListener('click', () => {
     zatem.classList.remove('zatem_open');
 })
 
-zatem.addEventListener('click', () => {
-    popup_inner.classList.remove('popup_inner_open');
-    popclose.style.width = '0px';
-    popup.classList.remove('popup_open');
-    zatem.classList.remove('zatem_open');
-})
-
 
 menu_btn.addEventListener('click', () => {
     header_menu.classList.add('header_menu_open');
@@ -42,6 +35,15 @@ menu_btn.addEventListener('click', () => {
 menu_close.addEventListener('click', () => {
     header_menu.classList.remove('header_menu_open');
     zatem.classList.remove('zatem_open');
+})
+
+zatem.addEventListener('click', () => {
+    if (!header_menu.classList.contains("header_menu_open")) {
+    popup_inner.classList.remove('popup_inner_open');
+    popclose.style.width = '0px';
+    popup.classList.remove('popup_open');
+    zatem.classList.remove('zatem_open');
+     }
 })
 
 
